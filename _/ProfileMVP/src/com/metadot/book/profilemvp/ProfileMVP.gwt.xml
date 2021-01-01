@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="profilemvp">
+	<!-- Inherit the core Web Toolkit stuff. -->
+	<inherits name='com.google.gwt.user.User' />
+	<inherits name="com.google.gwt.activity.Activity" />
+	<inherits name="com.google.gwt.place.Place" />
+
+	<!-- Inherit the default GWT style sheet. You can change -->
+	<!-- the theme of your GWT application by uncommenting -->
+	<!-- any one of the following lines. -->
+	<inherits name='com.google.gwt.user.theme.standard.Standard' />
+
+
+	<!-- Specify the app entry point class. -->
+	<entry-point class='com.metadot.book.profilemvp.client.ProfileMVP' />
+
+	<!-- Use BrowserFactoryImpl by default -->
+	<replace-with class="com.metadot.book.profilemvp.client.BrowserFactoryImpl">
+		<when-type-is class="com.metadot.book.profilemvp.client.BrowserFactory" />
+	</replace-with>
+
+  <!-- Smart phone detection -->
+	<define-property name="ismobile" values="yes,no" />
+	<property-provider name="ismobile"><![CDATA[ 
+       return (navigator.userAgent.indexOf('iPhone') > -1 || navigator.userAgent.indexOf('Android') > -1 || navigator.userAgent.indexOf('iPad') > -1) ? 'yes' : 
+'no'; 
+    ]]>
+	</property-provider>
+
+  <replace-with class="com.metadot.book.profilemvp.client.BrowserFactoryMobileImpl">
+    <when-type-is class="com.metadot.book.profilemvp.client.BrowserFactory" />
+		<when-property-is name="ismobile" value="yes" />
+	</replace-with>
+
+	<!-- Specify the paths for translatable code -->
+	<source path='client' />
+	<source path='shared' />
+
+</module>

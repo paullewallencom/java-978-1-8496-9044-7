@@ -1,0 +1,12 @@
+
+ProfileMVP is an Eclipse project bundle for a Google App Engine and Google Web Toolkit (GAE+GWT) application.
+
+This app illustrates the example described in Chapter 8., Section "MVP Development with Activities and Places", of the book below.
+
+This and the other applications in the download bundle accompany the book:
+
+  "Google App Engine Java and GWT Application Development" : 
+https://www.packtpub.com/google-app-engine-java-and-gwt-application-development/book ,
+by Daniel Guermeur and Amy Unruh
+
+For more info about this book, code snippets and updates, visit http://theconnectr.blogspot.com.
